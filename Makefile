@@ -1,4 +1,4 @@
-all:
+all: gen
 	ndk-build
 
 gen: jni/darmgen.py jni/darmtbl.py jni/darmtbl2.py
@@ -8,5 +8,7 @@ gen: jni/darmgen.py jni/darmtbl.py jni/darmtbl2.py
 
 clean:
 	rm -rf libs obj;\
-	rm -f jni/*.pyc
+	rm -f jni/*.pyc;\
+	rm -f jni/armv7-tbl.* jni/darm-tbl.* jni/thumb-tbl.*\
+	jni/darm-internal.h jni/thumb2-tbl.*
 
